@@ -5,6 +5,12 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='$', intents=intents)
 
+@bot.command()
+async def repeat(ctx, times: int, content='repeating...'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
+
 @bot.event
 async def on_ready():
     print(f'{bot.user} olarak giriş yaptık')
