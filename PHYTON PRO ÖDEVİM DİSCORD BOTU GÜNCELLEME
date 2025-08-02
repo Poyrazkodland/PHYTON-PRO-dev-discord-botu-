@@ -1,9 +1,14 @@
 import discord
 from discord.ext import commands
+import random
 
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
 
 @bot.command()
 async def repeat(ctx, times: int, content='repeating...'):
@@ -11,16 +16,95 @@ async def repeat(ctx, times: int, content='repeating...'):
     for i in range(times):
         await ctx.send(content)
 
-@bot.event
-async def on_ready():
-    print(f'{bot.user} olarak giriş yaptık')
+@bot.command()
+async def ismim(ctx, times: int, content='Poyraz'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
+
+@bot.command()
+async def kodland(ctx, times: int, content='Kodland i Çook seviyorum'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
+
+@bot.command()
+async def phytonpro(ctx, times: int, content='Phyton Pro Çok İyi'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
 
 @bot.command()
 async def hello(ctx):
     await ctx.send(f'Merhaba! Ben {bot.user}, bir Discord sohbet botuyum!')
 
 @bot.command()
+async def espiri(ctx):
+    await ctx.send(f'Batman Nereli BATMANLI hahahahahahaha')
+
+@bot.command()
+async def espiri1(ctx):
+    await ctx.send(f'Yikanan ton baliğina ne denir washington hahahahahahaha')
+
+@bot.command()
+async def espiri2(ctx):
+    await ctx.send(f'Hangi macun yenmez Lahmacun hahahaahahahhahahahaha')
+
+@bot.command()
+async def espiri3(ctx):
+    await ctx.send(f'Tuvaletteki 10 a ne denir Sifon hahahahhahahahaha')
+
+@bot.command()
+async def espiri4(ctx):
+    await ctx.send(f'Örümcek adam ağ atamiyormuş neden çünkü ağ bağlantisi kopmuş hahahahahahaha')
+
+@bot.command()
+async def espiri5(ctx):
+    await ctx.send(f'Küçük su birikintisine ne denir Sucuk hahahahahahahahaah')
+
+@bot.command()
+async def espiri6(ctx):
+    await ctx.send(f'Bacaktaki 10 a ne denir Pantolan hahahahhahahahaahah')
+
+@bot.command()
+async def espiri7(ctx):
+    await ctx.send(f'Türkiyenin en yeni şehri hangisidir Nevşehir hahahahahahahahahahahahaha')
+
+@bot.command()
+async def espiri8(ctx):
+    await ctx.send(f'Aya ilk bayraği kim dikmiştir Terzi hahahahahahahahah')
+
+@bot.command()
+async def espiri9(ctx):
+    await ctx.send(f'Rüzgar antik kentte nasil eser? Tarihi eser hahahahahahahahaahaha')
+
+@bot.command()
+async def espiri10(ctx):
+    await ctx.send(f'En çok aci çeken dağ hangisidir Ağri Daği hahahahahahahahahahahahahahaha')
+
+@bot.command()
+async def espiri11(ctx):
+    await ctx.send(f'Eve gelen hirsiz neyi çalmaz Zili Çalmaz hahahahahahahahahahahaha')
+
+@bot.command()
+async def espiri12(ctx):
+    await ctx.send(f'Kolun siyaha boyanmişina ne derler Karakol hahahahahahahahahahaha')
+
+@bot.command()
+async def espiri13(ctx):
+    await ctx.send(f'Masada hangi örtü kullanilmaz? - Bitki örtüsü hahahahahahahahahahaahhaha')
+
+@bot.command()
+async def espiri14(ctx):
+    await ctx.send(f'İneklerin sevmediği element? Azot hahahahahahahahahahahahahaha')
+
+@bot.command()
+async def espiri15(ctx):
+    await ctx.send(f'Dört tarafi suyla çevrili çaya ne denir? Ada Çayi hahahahahahahahahhahahahahahahahah')
+
+@bot.command()
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 
-bot.run("GİZLİ BOTUMUN TOKENİ")
+bot.run("gizli token kısmı")
+
